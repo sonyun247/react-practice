@@ -14,4 +14,4 @@ export default () => (
             <Redirect from="*" to="/" />
         </Switch>
     </Router>
-)
+);

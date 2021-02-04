@@ -1,3 +1,5 @@
+import "./Header.css";
+
 export default () => (
     <header>
         <ul>
