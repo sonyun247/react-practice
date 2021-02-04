@@ -1,8 +1,8 @@
-import "./Header.css";
+import styles from "./Header.module.css";
 
 export default () => (
     <header>
-        <ul>
+        <ul className={styles.nav}>
             <li>
                 <a href="/">Home</a>
             </li>
