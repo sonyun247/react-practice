@@ -11,7 +11,7 @@ const globalStyles = createGlobalStyle`
         background-color:rgba(20,20,20,1);
         color:white;
         font-size:12px;
-        margin-top:50px;
+        margin-top:60px;
     }
     a{
         text-decoration: none;
