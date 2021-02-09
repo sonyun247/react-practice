@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const Container = styled.div`
-padding: 0px 10px;
+padding: 10px;
 `;
 
 const Form = styled.form`

@@ -42,9 +42,6 @@ export default withRouter(({ location: { pathname } }) => (
             <List current={pathname === "/search"}>
                 <LinkStyle to="/search">Search</LinkStyle>
             </List>
-            <List current={pathname === "/detail"}>
-                <LinkStyle to="/detail">Detail</LinkStyle>
-            </List>
         </Lists>
     </Header >
 )
