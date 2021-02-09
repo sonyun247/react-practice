@@ -11,12 +11,12 @@ const TVPresenter = ({ popular, airingToday, loading, error }) => loading ? <Loa
     <Container>
         {popular && popular.length > 0 && (
             <Section title="Popular TV Shows">
-                {popular.map(show => (<span key={show.id}>{show.name}</span>))}
+                {popular.map(tv => (<span key={tv.id}>{tv.name}</span>))}
             </Section>
         )}
         {airingToday && airingToday.length > 0 && (
             <Section title="Airing Today TV Shows">
-                {airingToday.map(show => (<span key={show.id}>{show.name}</span>))}
+                {airingToday.map(tv => (<span key={tv.id}>{tv.name}</span>))}
             </Section>
         )}
     </Container>
