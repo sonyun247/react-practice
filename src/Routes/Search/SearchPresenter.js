@@ -1,4 +1,5 @@
 import Loader from "Components/Loader";
+import Message from "Components/Message";
 import Section from "Components/Section";
 import PropTypes from "prop-types";
 import styled from "styled-components";
@@ -47,6 +48,8 @@ const SearchPresenter = ({ movieResults,
                             <span key={tv.id}>{tv.name}</span>)}
                     </Section>
                 )}
+                {error && <Message color="red" text={error} />}
+                {movieResults && tvResults && movieResults.length === 0 && tvResults.length === 0 && (<Message color="grey" text="Not Found " />)}
             </>
         )}
     </Container>);
