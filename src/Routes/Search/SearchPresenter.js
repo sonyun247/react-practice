@@ -1,5 +1,6 @@
 import Loader from "Components/Loader";
 import Message from "Components/Message";
+import Poster from "Components/Poster";
 import Section from "Components/Section";
 import PropTypes from "prop-types";
 import styled from "styled-components";
@@ -39,13 +40,27 @@ const SearchPresenter = ({ movieResults,
                 {movieResults && movieResults.length > 0 && (
                     <Section title="Movie">
                         {movieResults.map(movie =>
-                            <span key={movie.id}>{movie.title}</span>)}
+                            <Poster
+                                key={movie.id}
+                                id={movie.id}
+                                imageUrl={movie.poster_path}
+                                title={movie.original_title}
+                                rating={movie.vote_average}
+                                year={movie.release_date.substring(0, 4)}
+                                isMovie={true}
+                            />)}
                     </Section>
                 )}
                 {tvResults && tvResults.length > 0 && (
                     <Section title="TV">
                         {tvResults.map(tv =>
-                            <span key={tv.id}>{tv.name}</span>)}
+                            <Poster key={tv.id}
+                                id={tv.id}
+                                imageUrl={tv.poster_path}
+                                title={tv.original_name}
+                                rating={tv.vote_average}
+                                year={tv.first_air_date.substring(0, 4)}
+                            />)}
                     </Section>
                 )}
                 {error && <Message color="red" text={error} />}
