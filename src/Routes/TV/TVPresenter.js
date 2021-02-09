@@ -16,7 +16,7 @@ const TVPresenter = ({ popular, airingToday, loading, error }) => loading ? <Loa
                 {popular.map(tv => (<Poster key={tv.id}
                     id={tv.id}
                     imageUrl={tv.poster_path}
-                    title={tv.original_name}
+                    title={tv.name}
                     rating={tv.vote_average}
                     year={tv.first_air_date.substring(0, 4)}
                 />))}
@@ -27,7 +27,7 @@ const TVPresenter = ({ popular, airingToday, loading, error }) => loading ? <Loa
                 {airingToday.map(tv => (<Poster key={tv.id}
                     id={tv.id}
                     imageUrl={tv.poster_path}
-                    title={tv.original_name}
+                    title={tv.name}
                     rating={tv.vote_average}
                     year={tv.first_air_date.substring(0, 4)}
                 />))}
