@@ -6,7 +6,7 @@ export default class extends React.Component {
     constructor(props) {
         super(props);
         const { location: { pathname } } = props;
-        this.state = { result: null, error: null, loading: true, isMovie: pathname.includes("/movie/") }
+        this.state = { result: null, externalId: null, error: null, loading: true, isMovie: pathname.includes("/movie/") }
     }
 
     async componentDidMount() {
@@ -17,25 +17,27 @@ export default class extends React.Component {
             return push("/")
         }
         let result = null;
+        let externalId = null;
         try {
             if (isMovie) {
                 ({ data: result } = await movieApi.detail(parsedId));
             } else {
                 ({ data: result } = await tvApi.detail(parsedId));
+                ({ data: externalId } = await tvApi.external(parsedId));
             }
         } catch {
             this.setState({ error: "Can't find it" })
         } finally {
-            this.setState({ loading: false, result })
+            this.setState({ loading: false, result, externalId })
         }
     }
 
     render() {
-        const { result, error, loading } = this.state;
-        console.log(result);
+        const { result, externalId, error, loading } = this.state;
         return (
             <DetailPresenter
                 result={result}
+                externalId={externalId}
                 error={error}
                 loading={loading}
             />
