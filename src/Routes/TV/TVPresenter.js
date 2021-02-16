@@ -7,7 +7,7 @@ import Poster from "Components/Poster";
 import Helmet from "react-helmet";
 
 const Container = styled.div`
-    padding:10px;
+    padding:20px;
 `;
 
 const TVPresenter = ({ popular, airingToday, loading, error }) => (<>
@@ -15,7 +15,7 @@ const TVPresenter = ({ popular, airingToday, loading, error }) => (<>
     {loading ? <Loader /> : (
         <Container>
             {popular && popular.length > 0 && (
-                <Section title="Popular TV Shows">
+                <Section title="인기">
                     {popular.map(tv => (<Poster key={tv.id}
                         id={tv.id}
                         imageUrl={tv.poster_path}
@@ -26,7 +26,7 @@ const TVPresenter = ({ popular, airingToday, loading, error }) => (<>
                 </Section>
             )}
             {airingToday && airingToday.length > 0 && (
-                <Section title="Airing Today TV Shows">
+                <Section title="오늘의 편성">
                     {airingToday.map(tv => (<Poster key={tv.id}
                         id={tv.id}
                         imageUrl={tv.poster_path}

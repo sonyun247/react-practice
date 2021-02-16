@@ -7,7 +7,7 @@ import { Helmet } from "react-helmet";
 import styled from "styled-components";
 
 const Container = styled.div`
-padding: 10px;
+padding: 20px;
 `;
 
 const Form = styled.form`

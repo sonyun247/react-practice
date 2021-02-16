@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Link, withRouter } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faHome } from '@fortawesome/free-solid-svg-icons';
 const Header = styled.header`
     z-index:99;
     position:fixed;
@@ -16,13 +16,20 @@ const Header = styled.header`
 `;
 const Lists = styled.ul`
     display:flex;
+    width:100%;
 `;
 const List = styled.li`
     width:80px;
     height:50px;
     text-align:center;
     border-bottom:3px solid ${props => (props.current ? "red" : "transparent")};
+    color:${props => (props.current ? "red" : "white")};
     transition: border-bottom .5s ease-out;
+    margin-right:20px;
+    :last-child{
+        position:absolute;
+        right:0;
+    }
 `;
 const LinkStyle = styled(Link)`
     height:50px;
@@ -36,7 +43,10 @@ export default withRouter(({ location: { pathname } }) => (
     <Header>
         <Lists>
             <List current={pathname === "/"}>
-                <LinkStyle to="/">Movie</LinkStyle>
+                <LinkStyle to="/"><FontAwesomeIcon icon={faHome} /></LinkStyle>
+            </List>
+            <List current={pathname === "/movie"}>
+                <LinkStyle to="/movie">Movie</LinkStyle>
             </List>
             <List current={pathname === "/tv"}>
                 <LinkStyle to="/tv">TV</LinkStyle>
