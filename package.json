@@ -35,7 +35,7 @@
       "react-app/jest"
     ]
   },
-  "homepage": "https://pedantic-nightingale.netlify.app/",
+  "homepage": "https://sonyun247-movie.netlify.app/",
   "browserslist": {
     "production": [
       ">0.2%",
