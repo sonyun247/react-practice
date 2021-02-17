@@ -114,6 +114,11 @@ width:80%;
 height:100%;
 margin-top:30px;
 overflow:scroll;
+::-webkit-scrollbar{
+            display:none;
+}
+-ms-overflow-style:none;
+scrollbar-width:none;
 `;
 const TabContentGrid = styled.div`
 display:grid;

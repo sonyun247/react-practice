@@ -18,6 +18,11 @@ const Grid = styled.div`
     grid-gap:20px;
     grid-auto-flow:column;
     overflow:scroll;
+    ::-webkit-scrollbar{
+            display:none;
+        }
+    -ms-overflow-style:none;
+    scrollbar-width:none;
 `;
 
 const Section = ({ title, children }) => (
